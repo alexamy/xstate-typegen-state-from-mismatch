@@ -1,24 +1,14 @@
 import { createMachine } from 'xstate';
 
-type Events =
-| { type: 'event' }
-
-type Actions =
-| { type: 'action' }
-
 export const machine = createMachine({
   initial: 'main',
   tsTypes: {} as import("./machine.typegen").Typegen0,
   schema: {
-    events: {} as Events,
-    actions: {} as Actions,
+    events: {} as { type: 'event' },
+    actions: {} as { type: 'action' },
   },
-  states: {
-    main: {},
-  },
+  states: { main: {} },
   on: {
-    'event': {
-      actions: ['action'],
-    },
+    'event': { actions: ['action'] },
   }
 });
